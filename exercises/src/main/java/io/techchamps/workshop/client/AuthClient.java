@@ -19,7 +19,7 @@ public class AuthClient {
      * Return the Response, do not check anything here: the test decides what to assert.
      */
     public Response signIn(String username, String password) {
-        throw new UnsupportedOperationException("TODO exercise 2");
+        throw new AssertionError("TODO exercise 2");
     }
 
     /** Signs in and returns the response as DTO. Fails when the credentials are wrong. */

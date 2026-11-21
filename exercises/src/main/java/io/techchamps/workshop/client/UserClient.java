@@ -19,22 +19,22 @@ public class UserClient {
 
     /** Exercise 3: a client whose requests carry the admin token (see TokenProvider and RequestSpecs.bearer). */
     public static UserClient asAdmin() {
-        throw new UnsupportedOperationException("TODO exercise 3");
+        throw new AssertionError("TODO exercise 3");
     }
 
     /** Exercise 3: same, for the normal user. */
     public static UserClient asUser() {
-        throw new UnsupportedOperationException("TODO exercise 3");
+        throw new AssertionError("TODO exercise 3");
     }
 
     /** Exercise 3: a client without a token. */
     public static UserClient anonymous() {
-        throw new UnsupportedOperationException("TODO exercise 3");
+        throw new AssertionError("TODO exercise 3");
     }
 
     /** Exercise 3: GET /users. The other methods below are given. */
     public Response getAll() {
-        throw new UnsupportedOperationException("TODO exercise 3");
+        throw new AssertionError("TODO exercise 3");
     }
 
     public Response getById(int id) {

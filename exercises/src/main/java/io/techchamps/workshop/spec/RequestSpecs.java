@@ -19,7 +19,7 @@ public final class RequestSpecs {
      * .setConfig(RestAssuredConfig.config().logConfig(LogConfig.logConfig().enableLoggingOfRequestAndResponseIfValidationFails()))
      */
     public static RequestSpecification base() {
-        throw new UnsupportedOperationException("TODO exercise 2");
+        throw new AssertionError("TODO exercise 2");
     }
 
     /** Base specification plus a JWT in the Authorization header. */
