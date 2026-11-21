@@ -51,7 +51,7 @@ Slides: https://claude.ai/artifact/QFAvwbptY6VQhPCRX3VPcG (private, share from t
 - Optional: install Docker: https://docs.docker.com/get-docker
 
 ## Installation
-- open a terminal and make sure you are in the folder casus
+- open a terminal in the repo root (restassured-workshop)
 - run from terminal `mvn clean install -DskipTests` (the build starts the backend briefly to generate `restbackend/target/openapi.yaml`, which is used to generate the DTOs)
 
 ## Start Back-end local

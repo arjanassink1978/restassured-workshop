@@ -5,14 +5,14 @@
 
   <parent>
     <groupId>io.techchamps</groupId>
-    <artifactId>restassured-tuturial</artifactId>
+    <artifactId>restassured-workshop</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>restbackend</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>restbackend</name>
-  <description>Backend for tutorial</description>
+  <description>Backend for the REST-Assured workshop</description>
 
   <properties>
         <start-class>io.techchamps.restbackend.Application</start-class>
