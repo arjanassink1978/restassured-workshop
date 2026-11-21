@@ -9,9 +9,12 @@
     <user.language>nl</user.language>
     <argLine>-Duser.language=${user.language}</argLine>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>21</java.version>
+    <maven.compiler.release>21</maven.compiler.release>
   </properties>
   <modules>
     <module>restbackend</module>
-    <module>tutorial</module>
+    <module>exercises</module>
+    <module>solutions</module>
   </modules>
 </project>

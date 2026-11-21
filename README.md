@@ -1,16 +1,58 @@
-# Readme for TechChamps-casus
+# TechChamps REST-Assured workshop (4 hours)
+
+From zero to API hero with Java and REST-Assured, finishing with an AI agent + skill that writes tests in your structure.
+
+## Repo layout
+| Module | Purpose |
+|---|---|
+| `restbackend/` | Spring Boot API under test (port 8085, H2 in memory, JWT) |
+| `exercises/` | **Your workspace.** Starter code with TODOs per exercise (`ex1_basics` ... `ex7_agent`) |
+| `solutions/` | Reference solution per exercise, plus the finished agent + skill in `.claude/` |
+
+## Pre-work (required, before the workshop)
+You must have this working when you arrive. Stuck? Sit next to a colleague and follow along: we do not debug installations during the workshop.
+1. Clone the repo, install Java 21+, Maven and Claude Code (`claude --version`, logged in)
+2. `mvn clean install -DskipTests` succeeds
+3. Backend starts (`cd restbackend && mvn spring-boot:run`) and http://localhost:8085/swagger-ui/index.html opens
+4. `mvn -pl solutions test` is green (backend running)
+
+## Workshop agenda
+| Time | Block | Exercise |
+|---|---|---|
+| 0:00 | Check and intro | |
+| 0:05 | APIs and REST-Assured basics | |
+| 0:15 | Swagger: try the API yourself | hands-on, 5 min |
+| 0:20 | Your first test, then DRY with a Helper | Ex 1 `ex1_basics` (15 min), Ex 2 `ex2_dry` (20 min) |
+| 0:55 | Authentication (JWT) and roles | Ex 3 `ex3_auth` (25 min) |
+| 1:20 | Break | |
+| 1:30 | Request chaining | Ex 4 `ex4_chaining` (20 min) |
+| 1:50 | DTOs, builders, property files | Ex 5 `ex5_dto` (30 min) |
+| 2:20 | Break | |
+| 2:30 | From tests to agent + skill: theory and demo | |
+| 2:50 | Write your own skill and agent | Ex 6 (30 min) |
+| 3:20 | Let the agent write tests, improve the skill | Ex 7 `ex7_agent` (25 min) |
+| 3:45 | Wrap-up and buffer | |
+
+Slides: https://claude.ai/artifact/QFAvwbptY6VQhPCRX3VPcG (private, share from the Share menu).
+
+## How to work
+- Do the exercises in `exercises/`. Run one class: `mvn -pl exercises test -Dtest=BasicLoginTest`
+- Every `fail("TODO ...")` is red until you implement the test.
+- Stuck? Peek in `solutions/`. Run the reference: `mvn -pl solutions test`
+- Exercise 6 and 7 use Claude Code: run `claude` from inside the `exercises/` folder so it picks up `exercises/.claude/`.
 
 ## Pre-requisites
 - Install Git: https://git-scm.com
 - Install Maven: https://maven.apache.org/download.cgi
-- Install Java 17 or higher: https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
-  - Or install OpenJDK 17 or higher: https://adoptopenjdk.net
+- Install Java 21 (LTS) or higher, e.g. https://adoptium.net
+- Versions used: Spring Boot 4.2.0, springdoc 3.2.1, REST-Assured 6.3.0, JUnit 6.1.3
 - Install NodeJS: https://nodejs.org/en/download/, [Node Version Manager-linux/Mac](https://github.com/nvm-sh/nvm) or [Node Version Manager-Windows](https://github.com/coreybutler/nvm-windows)
+- Claude Code (needed for the last part of the workshop): https://claude.com/claude-code
 - Optional: install Docker: https://docs.docker.com/get-docker
 
 ## Installation
 - open a terminal and make sure you are in the folder casus
-- run from terminal `mvn clean install`
+- run from terminal `mvn clean install -DskipTests` (the build starts the backend briefly to generate `restbackend/target/openapi.yaml`, which is used to generate the DTOs)
 
 ## Start Back-end local
 
@@ -25,15 +67,13 @@
     - alternative: run from terminal 
     
     ```sh
-    # Build the server
-    mvn package spring-boot:repackage
-    # Run the server
-    java - jar target/restbackend-0.0.1-SNAPSHOT.jar 
+    # Run the server (from the restbackend folder)
+    mvn spring-boot:run
     ```
 
 ## Backend Swagger and Database console
 You can use:
-- swagger-url: http://localhost:8085/swagger-ui.html
+- swagger-url: http://localhost:8085/swagger-ui/index.html
 - h2-console: http://localhost:8085/h2-console
   - login with username: sa and password: empty
   - jdbc:h2:mem:testdb
