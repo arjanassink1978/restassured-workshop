@@ -23,21 +23,21 @@ You must have this working when you arrive. Stuck? Sit next to a colleague and f
 | 0:00 | Check and intro | |
 | 0:05 | APIs and REST-Assured basics | |
 | 0:15 | Swagger: try the API yourself | hands-on |
-| 0:20 | Your first test | Ex 1 `ex1_basics` (15 min) |
-| 0:35 | One request specification and config | Ex 2 `ex2_spec` (13 min) |
-| 0:48 | DTOs instead of JSON strings | Ex 3 `ex3_dto` (13 min) |
-| 1:01 | An API client | Ex 4 `ex4_client` (16 min) |
-| 1:17 | Authentication (JWT) and roles | Ex 5 `ex5_auth` (20 min) |
-| 1:37 | Break | |
-| 1:47 | Request chaining and cleanup | Ex 6 `ex6_chaining` (20 min) |
-| 2:07 | Builders and test data | Ex 7 `ex7_builders` (15 min) |
-| 2:22 | Break | |
-| 2:32 | From tests to agent + skill: theory and demo | |
-| 2:52 | Write your own skill and AGENTS.md | Ex 8 (30 min) |
-| 3:22 | Let the agent write tests, improve the skill, bonus: catch a bug | Ex 9 `ex9_agent` (30 min) |
-| 3:52 | Wrap-up | |
+| 0:20 | Your first test: read, run, try | Ex 1 `ex1_basics` (10 min) |
+| 0:30 | One request specification and config | Ex 2 `ex2_spec` (13 min) |
+| 0:43 | DTOs instead of JSON strings | Ex 3 `ex3_dto` (13 min) |
+| 0:56 | An API client | Ex 4 `ex4_client` (16 min) |
+| 1:12 | Authentication (JWT) and roles | Ex 5 `ex5_auth` (20 min) |
+| 1:32 | Break | |
+| 1:42 | Request chaining and cleanup | Ex 6 `ex6_chaining` (20 min) |
+| 2:02 | Builders and test data | Ex 7 `ex7_builders` (15 min) |
+| 2:17 | Break | |
+| 2:27 | From tests to agent + skill: theory and demo | |
+| 2:47 | Write your own skill and AGENTS.md | Ex 8 (30 min) |
+| 3:17 | Let the agent write tests, improve the skill, bonus: catch a bug | Ex 9 `ex9_agent` (30 min) |
+| 3:47 | Wrap-up and buffer | |
 
-The route: loose first test (1) → spec (2) → DTOs (3) → client (4) → roles (5) → flows and cleanup (6) → builders (7) → the pattern on paper (8) → an assistant follows it (9).
+The route: a first test (1) → spec (2) → DTOs (3) → client (4) → roles (5) → flows and cleanup (6) → builders (7) → the pattern on paper (8) → an assistant follows it (9).
 
 ## Test structure used in this repo
 ```

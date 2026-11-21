@@ -7,50 +7,50 @@ import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.fail;
 
 /**
- * Exercise 1 - your first REST-Assured tests (verbose on purpose).
+ * Exercise 1 - your first REST-Assured test. This is how a first test often looks: everything is in the test.
  * Keep the backend running (see README) and check the API in Swagger first:
  * <a href="http://localhost:8085/swagger-ui/index.html">Swagger UI</a>
  *
- * Required: 1a. Do 1b and 1c if you are fast.
+ * 1. Read loginWithValidCredentials below (given) and run it. Look at the log of the request and the response.
+ * 2. Try it yourself: write loginWithInvalidCredentials in the same style.
+ * 3. Bonus: loginWithoutPasswordIsABadRequest. Which status do you expect? Check Swagger, then try it.
  */
 public class BasicLoginTest {
 
     @Test
     public void loginWithValidCredentials() {
         given()
-                .log().all().
-                baseUri("http://localhost").
-                port(8085).basePath("/api")
+                .log().all() // log request
+                .baseUri("http://localhost")
+                .port(8085)
+                .basePath("/api")
                 .header("Content-type", "application/json")
                 .body("""
                         {
                           "username": "admin",
                           "password": "admin1234"
                         }""")
-                    .when().post("/auth/signin").then().log().all().statusCode(200).
-                body("token", notNullValue()).
-                body("type", equalTo("Bearer")).
-                body("roles", hasItems("ROLE_USER", "ROLE_ADMIN"));
-        // TODO POST /api/auth/signin with admin / admin1234
-        //      Expect: status 200, body "token" is not null, "type" equals "Bearer",
-        //              "roles" has items ROLE_USER and ROLE_ADMIN
-        //      Hint: given().log().all().baseUri(..).port(..).basePath(..).header(..).body(..)
-        //            .when().post(..).then().log().all().statusCode(..).body(..)
-        fail("TODO exercise 1a");
+        .when()
+                .post("/auth/signin")
+        .then()
+                .log().all() // log response
+                .statusCode(200)
+                .body("token", notNullValue())
+                .body("type", equalTo("Bearer"))
+                .body("roles", hasItems("ROLE_USER", "ROLE_ADMIN"));
     }
 
     @Test
     public void loginWithInvalidCredentials() {
-        // OPTIONAL if you are fast (you write this one again in exercise 2)
-        // TODO POST /api/auth/signin with an unknown user
+        // TODO POST /api/auth/signin with an unknown user, for example dontExist / wrong1234
         //      Expect: status 401, "error" equals "authentication_error",
         //              "message" equals "Invalid username or password"
-        fail("TODO exercise 1b");
+        fail("TODO exercise 1");
     }
 
     @Test
     public void loginWithoutPasswordIsABadRequest() {
-        // TODO (bonus) send only a username. Which status code do you expect? Check Swagger, then try it.
-        fail("TODO exercise 1c (bonus)");
+        // TODO (bonus) send only a username. Which status do you expect?
+        fail("TODO exercise 1 (bonus)");
     }
 }
