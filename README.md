@@ -15,6 +15,7 @@ You must have this working when you arrive. Stuck? Sit next to a colleague and f
 2. `mvn clean install -DskipTests` succeeds
 3. Backend starts (`cd restbackend && mvn spring-boot:run`) and http://localhost:8085/swagger-ui/index.html opens
 4. `mvn -pl solutions test` is green (backend running)
+5. Using IntelliJ? Open the repo root as a Maven project and set the project SDK to a JDK 21 or higher (File > Project Structure > Project). If it says "JDK missing", add one via SDKs > Add SDK > Add JDK.
 
 ## Workshop agenda
 | Time | Block | Exercise |
