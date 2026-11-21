@@ -7,11 +7,11 @@ From zero to API hero with Java and REST-Assured, finishing with an AI agent + s
 |---|---|
 | `restbackend/` | Spring Boot API under test (port 8085, H2 in memory, JWT) |
 | `exercises/` | **Your workspace.** Starter code with TODOs per exercise (`ex1_basics` ... `ex7_agent`) |
-| `solutions/` | Reference solution per exercise, plus the finished agent + skill in `.claude/` |
+| `solutions/` | Reference solution per exercise, plus the finished `AGENTS.md` and skill (`.claude/skills/`) |
 
 ## Pre-work (required, before the workshop)
 You must have this working when you arrive. Stuck? Sit next to a colleague and follow along: we do not debug installations during the workshop.
-1. Clone the repo, install Java 21+, Maven and Claude Code (`claude --version`, logged in)
+1. Clone the repo, install Java 21+, Maven and an AI coding assistant that can read your repo and run commands (for example Claude Code, GitHub Copilot, Codex, Gemini CLI or Cursor) and check that it works
 2. `mvn clean install -DskipTests` succeeds
 3. Backend starts (`cd restbackend && mvn spring-boot:run`) and http://localhost:8085/swagger-ui/index.html opens
 4. `mvn -pl solutions test` is green (backend running)
@@ -50,7 +50,9 @@ Slides: https://claude.ai/artifact/QFAvwbptY6VQhPCRX3VPcG (private, share from t
 - Do the exercises in `exercises/`. Run one class: `mvn -pl exercises test -Dtest=BasicLoginTest`
 - Every `fail("TODO ...")` is red until you implement the test.
 - Stuck? Peek in `solutions/`. Run the reference: `mvn -pl solutions test`
-- Exercise 6 and 7 use Claude Code: run `claude` from inside the `exercises/` folder so it picks up `exercises/.claude/`.
+- Exercise 6 and 7 use an AI assistant: start it from inside the `exercises/` folder.
+  - `AGENTS.md` holds the instructions (role, always, output, stop conditions). Claude Code reads it through `CLAUDE.md`, which imports it.
+  - The skill is `.claude/skills/restassured-workshop/SKILL.md` (the open SKILL.md format). Other tools look in their own folder, for example GitHub Copilot in `.github/skills/`. Check your tool's documentation and copy the skill folder there if needed.
 
 ## Pre-requisites
 - Install Git: https://git-scm.com
@@ -58,7 +60,7 @@ Slides: https://claude.ai/artifact/QFAvwbptY6VQhPCRX3VPcG (private, share from t
 - Install Java 21 (LTS) or higher, e.g. https://adoptium.net
 - Versions used: Spring Boot 4.2.0, springdoc 3.2.1, REST-Assured 6.3.0, JUnit 6.1.3
 - Install NodeJS: https://nodejs.org/en/download/, [Node Version Manager-linux/Mac](https://github.com/nvm-sh/nvm) or [Node Version Manager-Windows](https://github.com/coreybutler/nvm-windows)
-- Claude Code (needed for the last part of the workshop): https://claude.com/claude-code
+- An AI coding assistant for the last part of the workshop (the exercises use Claude Code as example, any tool that reads `AGENTS.md` and `SKILL.md` works)
 - Optional: install Docker: https://docs.docker.com/get-docker
 
 ## Installation
