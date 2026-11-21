@@ -44,7 +44,6 @@ generated.dtos.*       DTOs generated from the backend's OpenAPI spec
 ```
 Tests check the status with REST-Assured and the content with AssertJ, and clean up their data in `@AfterEach`.
 
-Slides: https://claude.ai/artifact/QFAvwbptY6VQhPCRX3VPcG (private, share from the Share menu).
 
 ## How to work
 - Do the exercises in `exercises/`. Run one class: `mvn -pl exercises test -Dtest=BasicLoginTest`
