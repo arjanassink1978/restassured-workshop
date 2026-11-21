@@ -5,13 +5,17 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.fail;
 
 /**
- * Exercise 2 - an API client instead of repeated setup.
- * 1. Implement RequestSpecs.base()  (spec/RequestSpecs.java)
- * 2. Implement AuthClient.signIn(..) (client/AuthClient.java)
- * 3. Rewrite your login tests from exercise 1 with the client:
- *      new AuthClient().signIn("admin", "admin1234").then().statusCode(200).extract().as(JwtResponse.class)
- *    Check the DTO with AssertJ: assertThat(jwt.getToken()).isNotBlank()
- * 4. Prove it: change the port in config.properties and watch both tests fail. Change it back.
+ * Exercise 2 - an API client instead of repeated setup. Work in three steps and run after each.
+ *
+ * Step 1 (spec):   implement RequestSpecs.base()   (spec/RequestSpecs.java)
+ *                  check: SpecSmokeTest is green
+ * Step 2 (client): implement AuthClient.signIn(..) (client/AuthClient.java), then write the valid-login test below
+ *                    new AuthClient().signIn("admin", "admin1234").then().statusCode(200).extract().as(JwtResponse.class)
+ *                  check: loginWithValidCredentials is green
+ * Step 3 (proof):  write the invalid-login test, then change the port in config.properties:
+ *                  both tests must fail. Change it back.
+ *
+ * Check content with AssertJ: assertThat(jwt.getToken()).isNotBlank()
  */
 public class LoginTest {
 
