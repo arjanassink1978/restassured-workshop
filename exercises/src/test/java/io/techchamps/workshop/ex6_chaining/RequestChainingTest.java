@@ -1,4 +1,4 @@
-package io.techchamps.workshop.ex4_chaining;
+package io.techchamps.workshop.ex6_chaining;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.fail;
 
 /**
- * Exercise 4 - request chaining and cleanup. One test, four calls:
+ * Exercise 6 - request chaining and cleanup. One test, four calls:
  *   1. AuthClient.signUp(..)                  (SignUpRequestBuilder is given: unique username per run)
  *   2. UserClient.asUser().getByUsername(..)  (extract the generated id)
  *   3. UserClient.asUser().delete(id)
@@ -26,6 +26,6 @@ public class RequestChainingTest {
     @Test
     public void signUpGetAndDeleteUser() {
         // TODO
-        fail("TODO exercise 4");
+        fail("TODO exercise 6");
     }
 }

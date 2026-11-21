@@ -47,9 +47,9 @@ Four hours, about two thirds hands-on.
 | Block | Content |
 |---|---|
 | Check, theory, Swagger | REST basics, status codes, try the API by hand (20 min) |
-| Exercises 1 to 3 | First test, API client and DTOs, authentication and roles |
-| Exercises 4 and 5 | Request chaining and cleanup, builders and test data |
-| AI part | Theory and demo, write your rules (exercise 6), let the assistant write tests and catch a bug (exercise 7) |
+| Exercises 1 to 5 | First test, request spec, DTOs, API client, authentication and roles |
+| Exercises 6 and 7 | Request chaining and cleanup, builders and test data |
+| AI part | Theory and demo, write your rules (exercise 8), let the assistant write tests and catch a bug (exercise 9) |
 | Wrap-up | What changes in a real project |
 
 ### Why this workshop

@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Exercise 7: the kind of test class the agent should produce for the /profile endpoints:
+ * Exercise 9: the kind of test class the agent should produce for the /profile endpoints:
  * a client, builders, DTOs, role checks and cleanup.
  */
 public class ProfileTest {

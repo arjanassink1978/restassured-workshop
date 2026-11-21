@@ -15,11 +15,11 @@ public class AuthClient {
     private final RequestSpecification spec = RequestSpecs.base();
 
     /**
-     * Exercise 2: POST /auth/signin with a LoginRequest DTO (generated.dtos) as body.
+     * Exercise 4: POST /auth/signin with a LoginRequest DTO (generated.dtos) as body.
      * Return the Response, do not check anything here: the test decides what to assert.
      */
     public Response signIn(String username, String password) {
-        throw new AssertionError("TODO exercise 2");
+        throw new AssertionError("TODO exercise 4");
     }
 
     /** Signs in and returns the response as DTO. Fails when the credentials are wrong. */

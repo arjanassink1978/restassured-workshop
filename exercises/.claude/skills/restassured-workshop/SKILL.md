@@ -5,7 +5,7 @@ description: Conventions for writing REST-Assured API tests in this repo (API cl
 
 # REST-Assured test conventions
 
-Follow these rules for every new test. (Description, locations and workflow are given: your job in exercise 6 is the rules.)
+Follow these rules for every new test. (Description, locations and workflow are given: your job in exercise 8 is the rules.)
 
 ## Where things live
 - Tests: `src/test/java/io/techchamps/workshop/<feature>/<Name>Test.java`
@@ -16,13 +16,15 @@ Follow these rules for every new test. (Description, locations and workflow are 
 - Config: `config.properties` via `ConfigProperties`
 
 ## Rules
-TODO (exercise 6): at least 8 rules, short, concrete and checkable. Write for a new colleague who has never seen the repo.
+TODO (exercise 8): at least 8 rules, short, concrete and checkable. Write for a new colleague who has never seen the repo.
 Look back at each exercise and ask: what did I learn that an agent would get wrong?
 - exercise 1: what do you check in a response?
-- exercise 2: who talks to the API, and who does not?
-- exercise 3: how does a test choose who calls, and what must every endpoint be tested for?
-- exercise 4: flows, data that must be unique, what happens to data after the test
-- exercise 5: how are request bodies and responses represented? where do values like the port live?
+- exercise 2: where do the URL, port and content type live?
+- exercise 3: how are request bodies and responses represented?
+- exercise 4: who talks to the API, and who does not?
+- exercise 5: how does a test choose who calls, and what must every endpoint be tested for?
+- exercise 6: flows, data that must be unique, what happens to data after the test
+- exercise 7: how do you create valid, unique test data?
 - assertions: which library for what?
 
 ## Workflow

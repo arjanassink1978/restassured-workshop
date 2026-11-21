@@ -1,4 +1,4 @@
-package io.techchamps.workshop.ex4_chaining;
+package io.techchamps.workshop.ex6_chaining;
 
 import generated.dtos.SignUpRequest;
 import generated.dtos.UserResponse;
@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-/** Exercise 4: request chaining. The output of one call is the input of the next. */
+/** Exercise 6: request chaining. The output of one call is the input of the next. */
 public class RequestChainingTest {
 
     private final SignUpRequest newUser = new SignUpRequestBuilder().build();

@@ -2,6 +2,8 @@ package io.techchamps.workshop.ex1_basics;
 
 import org.junit.jupiter.api.Test;
 
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.fail;
 
 /**
@@ -15,6 +17,20 @@ public class BasicLoginTest {
 
     @Test
     public void loginWithValidCredentials() {
+        given()
+                .log().all().
+                baseUri("http://localhost").
+                port(8085).basePath("/api")
+                .header("Content-type", "application/json")
+                .body("""
+                        {
+                          "username": "admin",
+                          "password": "admin1234"
+                        }""")
+                    .when().post("/auth/signin").then().log().all().statusCode(200).
+                body("token", notNullValue()).
+                body("type", equalTo("Bearer")).
+                body("roles", hasItems("ROLE_USER", "ROLE_ADMIN"));
         // TODO POST /api/auth/signin with admin / admin1234
         //      Expect: status 200, body "token" is not null, "type" equals "Bearer",
         //              "roles" has items ROLE_USER and ROLE_ADMIN

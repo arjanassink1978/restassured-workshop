@@ -1,10 +1,10 @@
-# Exercise 7 - let the agent write the tests
+# Exercise 9 - let the agent write the tests
 
 Target: the `/api/profile` endpoints (GET, PUT, DELETE). No client and no test exist yet.
 
 1. Start your AI assistant in the `exercises` folder (for Claude Code: `cd exercises && claude`).
    It reads `AGENTS.md` (Claude Code: via `CLAUDE.md`) and can use your skill.
-2. Ask it to write `ProfileTest` in package `ex7_agent` for GET and PUT /api/profile and DELETE /api/profile/{id}.
+2. Ask it to write `ProfileTest` in package `ex9_agent` for GET and PUT /api/profile and DELETE /api/profile/{id}.
    Your skill should make it create a `ProfileClient` first.
 3. Review the result against your skill's rules: client used? DTOs and builders? AssertJ? Unique data and cleanup? 200/401/403?
 4. Run it twice. Improve your skill where the agent got it wrong, and run the agent again.
@@ -18,4 +18,4 @@ Stop the backend and start it with a deliberate bug: users may now delete profil
 Run your test again. If it stays green, your test does not check the access rules well enough.
 Ask the agent to fix it, or improve the skill so it does this next time. Restart the backend without the flag afterwards.
 
-Compare with the reference result in `solutions/.../ex7_agent/ProfileTest.java`.
+Compare with the reference result in `solutions/.../ex9_agent/ProfileTest.java`.

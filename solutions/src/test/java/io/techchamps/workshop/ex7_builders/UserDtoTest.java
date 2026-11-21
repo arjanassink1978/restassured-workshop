@@ -1,4 +1,4 @@
-package io.techchamps.workshop.ex5_dto;
+package io.techchamps.workshop.ex7_builders;
 
 import generated.dtos.ErrorResponse;
 import generated.dtos.SignUpRequest;
@@ -17,7 +17,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-/** Exercise 5: builders with unique defaults, DTO assertions and cleanup of the data a test creates. */
+/** Exercise 7: builders with unique defaults, DTO assertions and cleanup of the data a test creates. */
 public class UserDtoTest {
 
     private final List<String> createdUsernames = new ArrayList<>();

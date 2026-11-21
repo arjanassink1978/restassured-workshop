@@ -17,24 +17,24 @@ public class UserClient {
         this.spec = spec;
     }
 
-    /** Exercise 3: a client whose requests carry the admin token (see TokenProvider and RequestSpecs.bearer). */
+    /** Exercise 5: a client whose requests carry the admin token (see TokenProvider and RequestSpecs.bearer). */
     public static UserClient asAdmin() {
-        throw new AssertionError("TODO exercise 3");
+        throw new AssertionError("TODO exercise 5");
     }
 
-    /** Exercise 3: same, for the normal user. */
+    /** Exercise 5: same, for the normal user. */
     public static UserClient asUser() {
-        throw new AssertionError("TODO exercise 3");
+        throw new AssertionError("TODO exercise 5");
     }
 
-    /** Exercise 3: a client without a token. */
+    /** Exercise 5: a client without a token. */
     public static UserClient anonymous() {
-        throw new AssertionError("TODO exercise 3");
+        throw new AssertionError("TODO exercise 5");
     }
 
-    /** Exercise 3: GET /users. The other methods below are given. */
+    /** Exercise 5: GET /users. The other methods below are given. */
     public Response getAll() {
-        throw new AssertionError("TODO exercise 3");
+        throw new AssertionError("TODO exercise 5");
     }
 
     public Response getById(int id) {

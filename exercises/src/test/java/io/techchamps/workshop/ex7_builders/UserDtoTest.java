@@ -1,4 +1,4 @@
-package io.techchamps.workshop.ex5_dto;
+package io.techchamps.workshop.ex7_builders;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.fail;
 
 /**
- * Exercise 5 - builders and test data.
+ * Exercise 7 - builders and test data.
  * All builders are given (SignUpRequestBuilder, UserRequestBuilder, ProfileRequestBuilder, AddressRequestBuilder).
  * Read them first: valid by default, unique username and email per run, withX() to override.
  *
@@ -24,18 +24,18 @@ public class UserDtoTest {
     @Test
     public void signUpWithBuilderIsRepeatable() {
         // TODO sign up, expect 200, SignupResponse username equals the requested username
-        fail("TODO exercise 5a");
+        fail("TODO exercise 7a");
     }
 
     @Test
     public void signUpWithTakenUsernameIsRejected() {
         // TODO username "admin" is taken. Expect 400 and ErrorResponse message "Username is already taken"
-        fail("TODO exercise 5b");
+        fail("TODO exercise 7b");
     }
 
     @Test
     public void addUserWithProfile() {
         // TODO UserClient.asUser().create(..) expect 201, UserResponse has an id and one address
-        fail("TODO exercise 5c");
+        fail("TODO exercise 7c");
     }
 }

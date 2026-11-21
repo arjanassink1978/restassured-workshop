@@ -1,6 +1,6 @@
 # Agent instructions: REST-Assured tests
 
-TODO (exercise 6): write the instructions for your AI assistant. This file is read as project instructions
+TODO (exercise 8): write the instructions for your AI assistant. This file is read as project instructions
 by most AI coding tools. Keep it short; the detailed conventions live in the skill
 (`.claude/skills/restassured-workshop/SKILL.md`).
 

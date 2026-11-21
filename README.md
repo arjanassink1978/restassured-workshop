@@ -6,7 +6,7 @@ From zero to API hero with Java and REST-Assured, finishing with an AI agent + s
 | Module | Purpose |
 |---|---|
 | `restbackend/` | Spring Boot API under test (port 8085, H2 in memory, JWT) |
-| `exercises/` | **Your workspace.** Starter code with TODOs per exercise (`ex1_basics` ... `ex7_agent`) |
+| `exercises/` | **Your workspace.** Starter code with TODOs per exercise (`ex1_basics` ... `ex9_agent`) |
 | `solutions/` | Reference solution per exercise, plus the finished `AGENTS.md` and skill (`.claude/skills/`) |
 
 ## Pre-work (required, before the workshop)
@@ -24,16 +24,20 @@ You must have this working when you arrive. Stuck? Sit next to a colleague and f
 | 0:05 | APIs and REST-Assured basics | |
 | 0:15 | Swagger: try the API yourself | hands-on |
 | 0:20 | Your first test | Ex 1 `ex1_basics` (15 min) |
-| 0:35 | DTOs, then an API client with a request spec | Ex 2 `ex2_client` (25 min) |
-| 1:00 | Authentication (JWT) and roles | Ex 3 `ex3_auth` (20 min) |
-| 1:20 | Break | |
-| 1:30 | Request chaining and cleanup | Ex 4 `ex4_chaining` (20 min) |
-| 1:50 | Builders and test data | Ex 5 `ex5_dto` (15 min) |
-| 2:05 | Break | |
-| 2:15 | From tests to agent + skill: theory and demo | |
-| 2:35 | Write your own skill and agent | Ex 6 (30 min) |
-| 3:05 | Let the agent write tests, improve the skill, bonus: catch a bug | Ex 7 `ex7_agent` (35 min) |
-| 3:40 | Wrap-up and buffer | |
+| 0:35 | One request specification and config | Ex 2 `ex2_spec` (13 min) |
+| 0:48 | DTOs instead of JSON strings | Ex 3 `ex3_dto` (13 min) |
+| 1:01 | An API client | Ex 4 `ex4_client` (16 min) |
+| 1:17 | Authentication (JWT) and roles | Ex 5 `ex5_auth` (20 min) |
+| 1:37 | Break | |
+| 1:47 | Request chaining and cleanup | Ex 6 `ex6_chaining` (20 min) |
+| 2:07 | Builders and test data | Ex 7 `ex7_builders` (15 min) |
+| 2:22 | Break | |
+| 2:32 | From tests to agent + skill: theory and demo | |
+| 2:52 | Write your own skill and AGENTS.md | Ex 8 (30 min) |
+| 3:22 | Let the agent write tests, improve the skill, bonus: catch a bug | Ex 9 `ex9_agent` (30 min) |
+| 3:52 | Wrap-up | |
+
+The route: loose first test (1) → spec (2) → DTOs (3) → client (4) → roles (5) → flows and cleanup (6) → builders (7) → the pattern on paper (8) → an assistant follows it (9).
 
 ## Test structure used in this repo
 ```
@@ -50,7 +54,7 @@ Tests check the status with REST-Assured and the content with AssertJ, and clean
 - Do the exercises in `exercises/`. Run one class: `mvn -pl exercises test -Dtest=BasicLoginTest`
 - Every `fail("TODO ...")` is red until you implement the test.
 - Stuck? Peek in `solutions/`. Run the reference: `mvn -pl solutions test`
-- Exercise 6 and 7 use an AI assistant: start it from inside the `exercises/` folder.
+- Exercises 8 and 9 use an AI assistant: start it from inside the `exercises/` folder.
   - `AGENTS.md` holds the instructions (role, always, output, stop conditions). Claude Code reads it through `CLAUDE.md`, which imports it.
   - The skill is `.claude/skills/restassured-workshop/SKILL.md` (the open SKILL.md format). Other tools look in their own folder, for example GitHub Copilot in `.github/skills/`. Check your tool's documentation and copy the skill folder there if needed.
 

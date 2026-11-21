@@ -5,7 +5,7 @@ description: Conventions for writing REST-Assured API tests in this repo (API cl
 
 # REST-Assured test conventions
 
-Follow these rules for every new test. They are the result of the workshop exercises 1-5.
+Follow these rules for every new test. They are the result of the workshop exercises 1-7.
 
 ## Where things live
 - Tests: `src/test/java/io/techchamps/workshop/<feature>/<Name>Test.java`

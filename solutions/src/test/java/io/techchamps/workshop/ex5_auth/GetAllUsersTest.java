@@ -1,4 +1,4 @@
-package io.techchamps.workshop.ex3_auth;
+package io.techchamps.workshop.ex5_auth;
 
 import generated.dtos.UserResponse;
 import io.techchamps.workshop.client.UserClient;
@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-/** Exercise 3: who is allowed to do what. One test per kind of caller. */
+/** Exercise 5: who is allowed to do what. One test per kind of caller. */
 public class GetAllUsersTest {
 
     @Test

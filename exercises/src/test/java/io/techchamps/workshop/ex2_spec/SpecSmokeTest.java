@@ -1,4 +1,4 @@
-package io.techchamps.workshop.ex2_client;
+package io.techchamps.workshop.ex2_spec;
 
 import io.techchamps.workshop.spec.RequestSpecs;
 import org.junit.jupiter.api.Test;
@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 
 /**
- * Exercise 2, step 1 check (given, do not change): the API is reachable with your base specification.
+ * Exercise 2 check (given, do not change): the API is reachable with your base specification.
  * It is green when RequestSpecs.base() works. Without a token the answer is 401: that is what we expect here.
  */
 public class SpecSmokeTest {

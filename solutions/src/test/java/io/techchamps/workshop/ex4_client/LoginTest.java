@@ -1,4 +1,4 @@
-package io.techchamps.workshop.ex2_client;
+package io.techchamps.workshop.ex4_client;
 
 import generated.dtos.ErrorResponse;
 import generated.dtos.JwtResponse;
@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-/** Exercise 2: the same checks as exercise 1, now through the AuthClient and with DTOs. */
+/** Exercise 4: the same checks, now through the AuthClient. The test no longer knows paths or specs. */
 public class LoginTest {
 
     private final AuthClient auth = new AuthClient();
