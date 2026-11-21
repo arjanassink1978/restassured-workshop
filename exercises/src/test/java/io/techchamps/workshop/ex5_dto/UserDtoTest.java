@@ -7,13 +7,11 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 /**
  * Exercise 5 - builders and test data.
- * The DTOs (package generated.dtos) are generated from the backend's OpenAPI spec and used everywhere already.
+ * All builders are given (SignUpRequestBuilder, UserRequestBuilder, ProfileRequestBuilder, AddressRequestBuilder).
+ * Read them first: valid by default, unique username and email per run, withX() to override.
  *
- * 1. Create UserRequestBuilder in package builders (look at the given SignUpRequestBuilder).
- *    Valid by default, unique username and email per run (hint: UUID), withX() methods to override,
- *    default profile: new ProfileRequestBuilder().build(), default role: a RoleRequest named "USER".
- *    SignUpRequestBuilder, ProfileRequestBuilder and AddressRequestBuilder are given.
- * 2. Implement the tests below with builders, clients and AssertJ.
+ * 1. Implement the tests below. Override only what the test is about (for example withUsername("admin")).
+ * 2. Check the status with REST-Assured and the content with AssertJ.
  * 3. Clean up every user a test creates in @AfterEach.
  */
 public class UserDtoTest {

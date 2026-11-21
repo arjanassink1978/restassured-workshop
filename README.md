@@ -28,12 +28,12 @@ You must have this working when you arrive. Stuck? Sit next to a colleague and f
 | 1:00 | Authentication (JWT) and roles | Ex 3 `ex3_auth` (20 min) |
 | 1:20 | Break | |
 | 1:30 | Request chaining and cleanup | Ex 4 `ex4_chaining` (20 min) |
-| 1:50 | Builders and test data | Ex 5 `ex5_dto` (20 min) |
-| 2:10 | Break | |
-| 2:20 | From tests to agent + skill: theory and demo | |
-| 2:40 | Write your own skill and agent | Ex 6 (30 min) |
-| 3:10 | Let the agent write tests, improve the skill, bonus: catch a bug | Ex 7 `ex7_agent` (35 min) |
-| 3:45 | Wrap-up and buffer | |
+| 1:50 | Builders and test data | Ex 5 `ex5_dto` (15 min) |
+| 2:05 | Break | |
+| 2:15 | From tests to agent + skill: theory and demo | |
+| 2:35 | Write your own skill and agent | Ex 6 (30 min) |
+| 3:05 | Let the agent write tests, improve the skill, bonus: catch a bug | Ex 7 `ex7_agent` (35 min) |
+| 3:40 | Wrap-up and buffer | |
 
 ## Test structure used in this repo
 ```
