@@ -1,6 +1,6 @@
 # Conference submission: From zero to API hero
 
-Draft text for a call for proposals. Items in `[brackets]` need your input. Do not submit before you have run a pilot.
+Draft text for a call for proposals. Items in `[brackets]` need your input.
 
 ---
 
@@ -52,18 +52,14 @@ Four hours, about two thirds hands-on.
 | AI part | Theory and demo, write your rules (exercise 6), let the assistant write tests and catch a bug (exercise 7) |
 | Wrap-up | What changes in a real project |
 
-`[Optional: a shortened 3-hour variant exists if you provide the starter code for exercises 4 and 5.]`
-
 ### Why this workshop
 - It starts from understanding, not from the tool: you cannot instruct an agent about something you do not understand.
 - It is tool-independent and based on open conventions (`AGENTS.md`, `SKILL.md`).
 - It tests the AI-written tests with a deliberate bug.
+- It builds on a tutorial that has been given at an international testing conference.
 
 ### Speaker
-Arjan Assink works in Enschede and has more than 10 years of experience in test automation. He works at TechChamps. `[Add: conference talks, communities, one sentence about why you built this.]`
-
-### Evidence that it works
-`[Fill in after the pilot: date, number of participants, completion rate, one or two quotes, what you changed because of it. Do not submit with an empty section.]`
+Arjan Assink works in Enschede and has more than 10 years of experience in test automation. He works at TechChamps. He gave a tutorial on REST-Assured at the testing conference in Athens `[add conference name and year]`, which this workshop builds on and extends with AI assistants. `[Add: other talks, communities.]`
 
 ---
 
@@ -111,18 +107,16 @@ Vier uur, ongeveer twee derde hands-on. Zie de Engelse tabel hierboven.
 - Hij begint bij begrip, niet bij de tool: je kunt een agent niet instrueren over iets wat je zelf niet snapt.
 - Hij is tool-onafhankelijk en gebaseerd op open afspraken (`AGENTS.md`, `SKILL.md`).
 - Hij test de door AI geschreven tests met een bewuste bug.
+- Hij bouwt voort op een tutorial die al op een internationale testconferentie is gegeven.
 
 ### Spreker
-Arjan Assink werkt in Enschede en heeft meer dan 10 jaar ervaring met testautomatisering. Hij werkt bij TechChamps. `[Aanvullen: eerdere talks, communities, één zin over waarom je dit bouwde.]`
-
-### Bewijs dat het werkt
-`[Invullen na de pilot: datum, aantal deelnemers, hoeveel kwamen er doorheen, een of twee quotes, wat je erdoor veranderde. Niet indienen met een lege sectie.]`
+Arjan Assink werkt in Enschede en heeft meer dan 10 jaar ervaring met testautomatisering. Hij werkt bij TechChamps. Hij gaf een tutorial over REST-Assured op de testconferentie in Athene `[naam en jaar aanvullen]`, waarop deze workshop voortbouwt en die hij uitbreidt met AI-assistenten. `[Aanvullen: andere talks, communities.]`
 
 ---
 
 ## Before you submit
 
-- [ ] Run a pilot with a small group and fill in the evidence section.
+- [ ] If possible, run through the exercises with one or two colleagues first and adjust the timing.
 - [ ] Walk through the whole slide deck and check every slide visually.
 - [ ] Try the pre-work on a clean laptop with the AI tool you will name. Check the file locations for each tool you mention against its own documentation.
 - [ ] Make the repository public if the call asks for materials.
