@@ -1,6 +1,6 @@
 # TechChamps REST-Assured workshop (4 hours)
 
-From zero to API hero with Java and REST-Assured, finishing with an AI agent + skill that writes tests in your structure.
+From zero to A(P)I hero with Java and REST-Assured, finishing with an AI agent + skill that writes tests in your structure.
 
 ## Repo layout
 | Module | Purpose |
