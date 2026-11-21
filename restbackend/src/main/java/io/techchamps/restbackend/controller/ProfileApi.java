@@ -67,7 +67,7 @@ public class ProfileApi {
     }
 
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') or @bugFlags.profileDeleteOpen")
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> deleteProfile(@PathVariable int id) {
         try {

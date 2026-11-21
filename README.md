@@ -21,17 +21,28 @@ You must have this working when you arrive. Stuck? Sit next to a colleague and f
 |---|---|---|
 | 0:00 | Check and intro | |
 | 0:05 | APIs and REST-Assured basics | |
-| 0:15 | Swagger: try the API yourself | hands-on, 5 min |
-| 0:20 | Your first test, then DRY with a Helper | Ex 1 `ex1_basics` (15 min), Ex 2 `ex2_dry` (20 min) |
-| 0:55 | Authentication (JWT) and roles | Ex 3 `ex3_auth` (25 min) |
+| 0:15 | Swagger: try the API yourself | hands-on |
+| 0:20 | Your first test | Ex 1 `ex1_basics` (15 min) |
+| 0:35 | DTOs, then an API client with a request spec | Ex 2 `ex2_client` (25 min) |
+| 1:00 | Authentication (JWT) and roles | Ex 3 `ex3_auth` (20 min) |
 | 1:20 | Break | |
-| 1:30 | Request chaining | Ex 4 `ex4_chaining` (20 min) |
-| 1:50 | DTOs, builders, property files | Ex 5 `ex5_dto` (30 min) |
-| 2:20 | Break | |
-| 2:30 | From tests to agent + skill: theory and demo | |
-| 2:50 | Write your own skill and agent | Ex 6 (30 min) |
-| 3:20 | Let the agent write tests, improve the skill | Ex 7 `ex7_agent` (25 min) |
+| 1:30 | Request chaining and cleanup | Ex 4 `ex4_chaining` (20 min) |
+| 1:50 | Builders and test data | Ex 5 `ex5_dto` (20 min) |
+| 2:10 | Break | |
+| 2:20 | From tests to agent + skill: theory and demo | |
+| 2:40 | Write your own skill and agent | Ex 6 (30 min) |
+| 3:10 | Let the agent write tests, improve the skill, bonus: catch a bug | Ex 7 `ex7_agent` (35 min) |
 | 3:45 | Wrap-up and buffer | |
+
+## Test structure used in this repo
+```
+spec/RequestSpecs      shared request specification (config, content type, logging only on failure)
+auth/TokenProvider     signs in once per user, caches the JWT
+client/*Client         one class per resource: knows paths and specs, tests never call given() themselves
+builders/*             valid + unique request DTOs
+generated.dtos.*       DTOs generated from the backend's OpenAPI spec
+```
+Tests check the status with REST-Assured and the content with AssertJ, and clean up their data in `@AfterEach`.
 
 Slides: https://claude.ai/artifact/QFAvwbptY6VQhPCRX3VPcG (private, share from the Share menu).
 

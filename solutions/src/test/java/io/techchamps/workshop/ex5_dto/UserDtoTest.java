@@ -1,54 +1,39 @@
 package io.techchamps.workshop.ex5_dto;
 
-import generated.dtos.JwtResponse;
-import generated.dtos.LoginRequest;
+import generated.dtos.ErrorResponse;
 import generated.dtos.SignUpRequest;
 import generated.dtos.SignupResponse;
 import generated.dtos.UserRequest;
 import generated.dtos.UserResponse;
-import io.techchamps.workshop.Helper;
 import io.techchamps.workshop.builders.SignUpRequestBuilder;
 import io.techchamps.workshop.builders.UserRequestBuilder;
+import io.techchamps.workshop.client.AuthClient;
+import io.techchamps.workshop.client.UserClient;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
-import static io.restassured.RestAssured.given;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.hamcrest.Matchers.*;
+import java.util.ArrayList;
+import java.util.List;
 
-/** Exercise 5: generated DTOs + builders instead of raw JSON, and no hardcoded config. */
+import static org.assertj.core.api.Assertions.assertThat;
+
+/** Exercise 5: builders with unique defaults, DTO assertions and cleanup of the data a test creates. */
 public class UserDtoTest {
 
-    @Test
-    public void loginWithDtoAndReadResponseAsDto() {
-        LoginRequest login = new LoginRequest();
-        login.setUsername("admin");
-        login.setPassword("admin1234");
+    private final List<String> createdUsernames = new ArrayList<>();
 
-        JwtResponse jwt = given()
-                .spec(Helper.requestSpec())
-                .body(login)
-        .when()
-                .post("/auth/signin")
-        .then()
-                .statusCode(200)
-                .extract().as(JwtResponse.class);
-
-        assertThat(jwt.getToken()).isNotBlank();
-        assertThat(jwt.getType()).isEqualTo("Bearer");
-        assertThat(jwt.getRoles()).contains("ROLE_ADMIN", "ROLE_USER");
+    @AfterEach
+    void cleanUp() {
+        createdUsernames.forEach(UserClient.asAdmin()::deleteByUsername);
     }
 
     @Test
     public void signUpWithBuilderIsRepeatable() {
         SignUpRequest signUp = new SignUpRequestBuilder().build();
+        createdUsernames.add(signUp.getUsername());
 
-        SignupResponse response = given()
-                .spec(Helper.requestSpec())
-                .body(signUp)
-        .when()
-                .post("/auth/signup")
-        .then()
-                .statusCode(200)
+        SignupResponse response = new AuthClient().signUp(signUp)
+                .then().statusCode(200)
                 .extract().as(SignupResponse.class);
 
         assertThat(response.getUsername()).isEqualTo(signUp.getUsername());
@@ -58,27 +43,20 @@ public class UserDtoTest {
     public void signUpWithTakenUsernameIsRejected() {
         SignUpRequest signUp = new SignUpRequestBuilder().withUsername("admin").build();
 
-        given()
-                .spec(Helper.requestSpec())
-                .body(signUp)
-        .when()
-                .post("/auth/signup")
-        .then()
-                .statusCode(400)
-                .body("message", equalTo("Username is already taken"));
+        ErrorResponse error = new AuthClient().signUp(signUp)
+                .then().statusCode(400)
+                .extract().as(ErrorResponse.class);
+
+        assertThat(error.getMessage()).isEqualTo("Username is already taken");
     }
 
     @Test
     public void addUserWithProfile() {
         UserRequest user = new UserRequestBuilder().withName("Builder Bob").build();
+        createdUsernames.add(user.getUsername());
 
-        UserResponse created = given()
-                .spec(Helper.userSpec())
-                .body(user)
-        .when()
-                .post("/users")
-        .then()
-                .statusCode(201)
+        UserResponse created = UserClient.asUser().create(user)
+                .then().statusCode(201)
                 .extract().as(UserResponse.class);
 
         assertThat(created.getId()).isNotNull();

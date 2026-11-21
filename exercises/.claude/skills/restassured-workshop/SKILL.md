@@ -1,27 +1,36 @@
 ---
 name: restassured-workshop
-description: TODO (exercise 6) - one or two sentences. WHAT does this skill do and WHEN should Claude load it? Mention REST-Assured and this repo. Claude only loads the skill when this description matches the task.
+description: Conventions for writing REST-Assured API tests in this repo (API clients, request specs, generated DTOs, builders, test data cleanup, role checks). Use whenever you create or change a REST-Assured test for the restbackend API.
 ---
 
 # REST-Assured test conventions
 
-TODO (exercise 6): turn what you learned in exercises 1-5 into rules an agent can follow.
-Keep every rule short, concrete and checkable. Write for a new colleague who has never seen this repo.
+Follow these rules for every new test. (Description, locations and workflow are given: your job in exercise 6 is the rules.)
 
 ## Where things live
-TODO: where do tests, Helper, builders, DTOs and config live? (look at the solutions module if you are unsure)
+- Tests: `src/test/java/io/techchamps/workshop/<feature>/<Name>Test.java`
+- Clients (one per resource, they know paths and specs): `io.techchamps.workshop.client.*`
+- Request specs: `io.techchamps.workshop.spec.RequestSpecs`; tokens: `io.techchamps.workshop.auth.TokenProvider`
+- Builders (one per request DTO): `io.techchamps.workshop.builders.*`
+- DTOs: `generated.dtos.*`, generated from `restbackend/target/openapi.yaml`
+- Config: `config.properties` via `ConfigProperties`
 
 ## Rules
-TODO: at least 6 rules. Think about:
-- duplicated setup (exercise 2)
-- authentication (exercise 3)
-- test flows and passing data between calls (exercise 4)
-- DTOs, builders, config, repeatable data (exercise 5)
-- what a good assertion looks like
-- which scenarios every endpoint needs (hint: the roles in @PreAuthorize)
+TODO (exercise 6): at least 8 rules, short, concrete and checkable. Write for a new colleague who has never seen the repo.
+Look back at each exercise and ask: what did I learn that an agent would get wrong?
+- exercise 1: what do you check in a response?
+- exercise 2: who talks to the API, and who does not?
+- exercise 3: how does a test choose who calls, and what must every endpoint be tested for?
+- exercise 4: flows, data that must be unique, what happens to data after the test
+- exercise 5: how are request bodies and responses represented? where do values like the port live?
+- assertions: which library for what?
 
 ## Workflow
-TODO: in which order should the agent work? (read spec -> reuse -> write -> RUN -> report)
+1. Read the endpoint in `restbackend/target/openapi.yaml` and its controller to learn status codes and roles.
+2. Look at existing clients, builders and tests; reuse before creating.
+3. Write the tests (and the client or builder if missing).
+4. Run them: backend must be running on port 8085, then `mvn -pl <module> test -Dtest=<Name>Test`. Run twice.
+5. Fix failures in the test unless the backend clearly violates its own OpenAPI contract; then report it, do not change the backend.
 
-## Known quirks
+## Known API quirks
 TODO (optional): things in this API that look like bugs but are not your concern.

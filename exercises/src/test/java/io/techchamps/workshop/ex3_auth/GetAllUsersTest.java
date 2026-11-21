@@ -5,19 +5,18 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.fail;
 
 /**
- * Exercise 3 - Authentication and authorisation.
- * GET /api/users needs a JWT and the ADMIN role.
+ * Exercise 3 - authentication and roles.
+ * GET /api/users needs a JWT and the ADMIN role. TokenProvider (given) signs in once per user and caches the token.
  *
- * 1. In Helper implement getToken(username, password): sign in and extract the "token" from the response
- * 2. In Helper implement authenticatedSpec(token): requestSpec + header "Authorization: Bearer <token>"
- * 3. In Helper implement adminSpec() and userSpec() (credentials: see config.properties)
- * 4. Implement the tests below
+ * 1. In UserClient implement asAdmin(), asUser(), anonymous() and getAll()
+ *    (hint: new UserClient(RequestSpecs.bearer(TokenProvider.admin())))
+ * 2. Implement the tests below. Check the status with REST-Assured, the content with AssertJ.
  */
 public class GetAllUsersTest {
 
     @Test
     public void adminCanGetAllUsers() {
-        // TODO expect 200 and usernames admin, user, moderator in the list
+        // TODO expect 200 and usernames admin, user, moderator (extract(): UserResponse[].class)
         fail("TODO exercise 3a");
     }
 

@@ -1,45 +1,33 @@
 package io.techchamps.workshop.ex3_auth;
 
-import io.techchamps.workshop.Helper;
+import generated.dtos.UserResponse;
+import io.techchamps.workshop.client.UserClient;
 import org.junit.jupiter.api.Test;
 
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
-/** Exercise 3: authentication with a JWT token and authorisation per role. */
+/** Exercise 3: who is allowed to do what. One test per kind of caller. */
 public class GetAllUsersTest {
 
     @Test
     public void adminCanGetAllUsers() {
-        given()
-                .spec(Helper.adminSpec())
-        .when()
-                .get("/users")
-        .then()
-                .log().all()
-                .statusCode(200)
-                .body("username", hasItems("admin", "user", "moderator"));
+        UserResponse[] users = UserClient.asAdmin().getAll()
+                .then().statusCode(200)
+                .extract().as(UserResponse[].class);
+
+        assertThat(users).extracting(UserResponse::getUsername)
+                .contains("admin", "user", "moderator");
     }
 
     @Test
     public void userIsForbiddenToGetAllUsers() {
-        given()
-                .spec(Helper.userSpec())
-        .when()
-                .get("/users")
-        .then()
-                .log().all()
-                .statusCode(403);
+        UserClient.asUser().getAll()
+                .then().statusCode(403);
     }
 
     @Test
     public void anonymousIsUnauthorized() {
-        given()
-                .spec(Helper.requestSpec())
-        .when()
-                .get("/users")
-        .then()
-                .log().all()
-                .statusCode(401);
+        UserClient.anonymous().getAll()
+                .then().statusCode(401);
     }
 }
