@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 /**
  * Exercise 1 - your first REST-Assured tests (verbose on purpose).
  * Keep the backend running (see README) and check the API in Swagger first:
- * http://localhost:8085/swagger-ui/index.html
+ * <a href="http://localhost:8085/swagger-ui/index.html">Swagger UI</a>
  *
  * Required: 1a. Do 1b and 1c if you are fast.
  */
